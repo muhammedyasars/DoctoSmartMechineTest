@@ -58,35 +58,37 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="container">
-      <div className="header">
-        <h1>My Tasks</h1>
-        <div className="user-info">
-          <span>{user?.name}</span>
-          <button onClick={handleLogout} className="btn btn-danger">
-            Logout
-          </button>
+    <div className="centered-container">
+      <div className="centered-card">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-xl font-bold">My Tasks</h1>
+          <div className="flex items-center gap-2">
+            <span className="text-sm">{user?.name}</span>
+            <button onClick={handleLogout} className="btn btn-danger">
+              Logout
+            </button>
+          </div>
         </div>
+
+        <TaskForm onSubmit={handleAddTask} />
+
+        {loading ? (
+          <p className="loading">Loading tasks...</p>
+        ) : tasks.length === 0 ? (
+          <p className="empty-message">No tasks yet. Create one!</p>
+        ) : (
+          <div className="tasks-list">
+            {tasks.map((task) => (
+              <TaskItem
+                key={task.id}
+                task={task}
+                onEdit={setEditingTask}
+                onDelete={handleDeleteTask}
+              />
+            ))}
+          </div>
+        )}
       </div>
-
-      <TaskForm onSubmit={handleAddTask} />
-
-      {loading ? (
-        <p className="loading">Loading tasks...</p>
-      ) : tasks.length === 0 ? (
-        <p className="empty-message">No tasks yet. Create one!</p>
-      ) : (
-        <div className="tasks-list">
-          {tasks.map((task) => (
-            <TaskItem
-              key={task.id}
-              task={task}
-              onEdit={setEditingTask}
-              onDelete={handleDeleteTask}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 };

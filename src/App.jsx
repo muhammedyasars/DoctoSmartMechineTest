@@ -5,7 +5,6 @@ import LoginPage from './Pages/LoginPage';
 import RegisterPage from './Pages/RegisterPage';
 import DashboardPage from './Pages/DashboardPage';
 import AdminPage from './Pages/AdminPage';
-import './App.css';
 
 function App() {
   return (

@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Very simple white theme with all inputs centered */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #e5e5e5;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Center all inputs and forms */
+.centered-container {
+  @apply min-h-screen flex items-center justify-center p-4;
+}
+
+.centered-card {
+  @apply w-full max-w-md bg-white p-8 border border-gray-200 rounded-lg shadow-sm;
+}
+
+.centered-form {
+  @apply flex flex-col items-center;
+}
+
+.centered-input {
+  @apply w-full px-4 py-2 mb-4 border border-gray-300 rounded text-center;
+}
+
+.centered-button {
+  @apply w-full px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors;
+}
+
+.centered-title {
+  @apply text-2xl font-bold text-center mb-6;
+}
+
+.centered-text {
+  @apply text-center mb-4;
+}
+
+.error-message {
+  @apply text-red-500 text-center mb-4;
+}
+
+.success-message {
+  @apply text-green-500 text-center mb-4;
+}
+
+/* Task specific styles */
+.task-form {
+  @apply w-full mb-6;
+}
+
+.task-item {
+  @apply p-4 mb-4 border border-gray-200 rounded flex justify-between items-start;
+}
+
+.task-content {
+  @apply flex-1;
+}
+
+.task-actions {
+  @apply flex gap-2;
+}
+
+.btn {
+  @apply px-3 py-1 rounded text-sm;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 text-white hover:bg-gray-600;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+.loading, .empty-message {
+  @apply text-center py-4;
+}

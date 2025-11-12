@@ -20,17 +20,17 @@ const TaskForm = ({ onSubmit }) => {
         placeholder="Task title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="input-field"
+        className="centered-input"
         required
       />
       <textarea
         placeholder="Task description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="input-field"
+        className="centered-input"
         rows="3"
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="centered-button">
         Add Task
       </button>
     </form>

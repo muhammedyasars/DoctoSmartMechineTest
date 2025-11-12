@@ -4,9 +4,9 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
   return (
     <div className="task-item">
       <div className="task-content">
-        <h3>{task.title}</h3>
-        <p>{task.description}</p>
-        <small>Status: {task.status || 'Pending'}</small>
+        <h3 className="font-medium">{task.title}</h3>
+        <p className="text-gray-600 text-sm mt-1">{task.description}</p>
+        <small className="text-gray-500">Status: {task.status || 'Pending'}</small>
       </div>
       <div className="task-actions">
         <button onClick={() => onEdit(task)} className="btn btn-secondary">
